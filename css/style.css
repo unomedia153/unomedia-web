@@ -1,83 +1,27 @@
-/* CSS Reset & Variables */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --accent-color: #0066ff; /* 신뢰감을 주는 블루 계열 */
-    --gray-color: #888888;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Noto Sans KR', sans-serif;
     text-align: center;
+    padding: 50px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    background: white;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Logo Styles */
-.logo-container {
-    margin-bottom: 40px;
+h1 { 
+    color: #333; 
 }
 
-.logo {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-    color: var(--text-color);
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    border-bottom: 4px solid var(--accent-color);
-    line-height: 1;
-    padding-bottom: 5px;
-}
-
-/* Main Content */
-.content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    color: var(--gray-color);
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: opacity 0.3s ease;
+/* 더미 이미지 스타일 */
+.dummy-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     margin-top: 20px;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-/* Footer */
-footer {
-    position: absolute;
-    bottom: 30px;
-    font-size: 0.8rem;
-    color: var(--gray-color);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 2.5rem;
-    }
 }
