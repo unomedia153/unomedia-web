@@ -5,6 +5,7 @@
   --foreground: #171717;
 }
 
+/* @theme는 Tailwind CSS v4의 정상적인 문법입니다 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
