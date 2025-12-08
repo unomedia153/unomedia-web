@@ -16,10 +16,10 @@ export default function Header() {
 
       {/* 메뉴 영역 */}
       <nav className="hidden md:flex gap-8 font-medium text-sm tracking-wide">
-        <Link href="#" className="hover:underline underline-offset-4">WORK</Link>
         <Link href="#" className="hover:underline underline-offset-4">ABOUT</Link>
+        <Link href="#" className="hover:underline underline-offset-4">PORTFOLIO</Link>
         <Link href="#" className="hover:underline underline-offset-4">NEWS</Link>
-        <Link href="#" className="hover:underline underline-offset-4">CONTACT</Link>
+        <Link href="#" className="hover:underline underline-offset-4">프로젝트 문의</Link>
       </nav>
 
       {/* 모바일용 햄버거 메뉴 아이콘 (모바일에서만 보임) */}
