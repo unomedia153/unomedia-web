@@ -1,6 +1,7 @@
-import Header from "@/components/Header"; // 헤더 임포트
-import FadeIn from "@/components/FadeIn";
-import Hero from "@/components/Hero";
+import React from "react";
+import Header from "../components/Header"; // 헤더 임포트
+import FadeIn from "../components/FadeIn";
+import Hero from "../components/Hero";
 
 export default function Home() {
   // 포트폴리오 데이터
