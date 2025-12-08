@@ -56,7 +56,7 @@ export default function Home() {
       {/* 4. 푸터 */}
       <footer className="bg-gray-50 py-20 text-center border-t border-gray-100">
         <FadeIn>
-            <h2 className="text-3xl font-bold mb-8">Let's create something together.</h2>
+            <h2 className="text-3xl font-bold mb-8">Let's create something together....</h2>
             <button className="bg-black text-white px-10 py-4 rounded-full text-lg hover:bg-gray-800 transition shadow-lg">
                 Contact Us
             </button>
