@@ -1,16 +1,10 @@
+import React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header"; // 방금 만든 헤더 가져오기
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,10 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={inter.className}>
+        {/* 상단 헤더 추가 */}
+        <Header />
+        
+        {/* 헤더 높이만큼 아래로 띄우기 (헤더가 내용을 가리지 않도록) */}
+        <main className="pt-16">
+          {children}
+        </main>
       </body>
     </html>
   );
