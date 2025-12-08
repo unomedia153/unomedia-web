@@ -1,6 +1,6 @@
-import React from "react";
-import FadeIn from "../components/FadeIn";
-import Hero from "../components/Hero";
+import Header from "@/components/Header"; // 헤더 임포트
+import FadeIn from "@/components/FadeIn";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   // 포트폴리오 데이터
@@ -16,10 +16,13 @@ export default function Home() {
   return (
     <main className="bg-white min-h-screen selection:bg-black selection:text-white">
       
-      {/* 1. 히어로 영역 (이미지 -> 스크롤 -> 텍스트) */}
+      {/* 1. 헤더 (고정됨) */}
+      <Header />
+
+      {/* 2. 히어로 영역 (이미지 -> 스크롤 -> 텍스트) */}
       <Hero />
 
-      {/* 2. 포트폴리오 영역 */}
+      {/* 3. 포트폴리오 영역 */}
       <section className="px-6 md:px-20 py-20 max-w-7xl mx-auto">
         <div className="mb-20 border-b border-gray-200 pb-4">
             <h2 className="text-3xl font-bold">Selected Works</h2>
@@ -49,7 +52,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 푸터 */}
+      {/* 4. 푸터 */}
       <footer className="bg-gray-50 py-20 text-center border-t border-gray-100">
         <FadeIn>
             <h2 className="text-3xl font-bold mb-8">Let's create something together.</h2>
