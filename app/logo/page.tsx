@@ -1,5 +1,5 @@
 import React from "react";
-import { Poppins, Inter, Urbanist, Manrope, Outfit } from "next/font/google";
+import { Poppins, Inter, Urbanist, Manrope, Outfit, Bebas_Neue, Montserrat, Playfair_Display, Raleway, Space_Grotesk } from "next/font/google";
 
 const poppins = Poppins({ 
   weight: ["400", "500", "600", "700"],
@@ -30,6 +30,45 @@ const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
 });
+
+// 개성 있는 폰트들
+const bebasNeue = Bebas_Neue({ 
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-bebas-neue",
+});
+
+const montserrat = Montserrat({ 
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+const playfairDisplay = Playfair_Display({ 
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+});
+
+const raleway = Raleway({ 
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-raleway",
+});
+
+const spaceGrotesk = Space_Grotesk({ 
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
+
+const uniqueFonts = [
+  { name: "Bebas Neue (베바스 뉴)", font: bebasNeue, className: bebasNeue.variable },
+  { name: "Montserrat (몬세라트)", font: montserrat, className: montserrat.variable },
+  { name: "Playfair Display (플레이페어 디스플레이)", font: playfairDisplay, className: playfairDisplay.variable },
+  { name: "Raleway (랄웨이)", font: raleway, className: raleway.variable },
+  { name: "Space Grotesk (스페이스 그로테스크)", font: spaceGrotesk, className: spaceGrotesk.variable },
+];
 
 const fonts = [
   { name: "Poppins (포핀스)", font: poppins, className: poppins.variable },
@@ -88,6 +127,36 @@ export default function LogoPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* 개성 있는 폰트 섹션 */}
+        <div className="mt-24 pt-16 border-t-2 border-gray-300">
+          <h2 className="text-4xl font-bold mb-12 text-center">개성 있는 로고 폰트</h2>
+          
+          <div className="space-y-16">
+            {uniqueFonts.map((fontItem) => (
+              <div key={fontItem.name} className="border-b border-gray-200 pb-12">
+                <h3 className={`text-2xl font-bold mb-8 ${fontItem.className}`}>
+                  {fontItem.name}
+                </h3>
+                
+                <div className="space-y-6">
+                  <div className={`${fontItem.className} text-gray-900`}>
+                    <p className="text-8xl font-bold tracking-tight">unomedia</p>
+                  </div>
+                  <div className={`${fontItem.className} text-gray-900`}>
+                    <p className="text-6xl font-bold tracking-tight">unomedia</p>
+                  </div>
+                  <div className={`${fontItem.className} text-gray-900`}>
+                    <p className="text-4xl font-bold tracking-tight">unomedia</p>
+                  </div>
+                  <div className={`${fontItem.className} text-gray-900`}>
+                    <p className="text-3xl font-semibold tracking-tight">unomedia</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
