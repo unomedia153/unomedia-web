@@ -63,11 +63,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const uniqueFonts = [
-  { name: "Bebas Neue (베바스 뉴)", font: bebasNeue, className: bebasNeue.variable },
-  { name: "Montserrat (몬세라트)", font: montserrat, className: montserrat.variable },
-  { name: "Playfair Display (플레이페어 디스플레이)", font: playfairDisplay, className: playfairDisplay.variable },
-  { name: "Raleway (랄웨이)", font: raleway, className: raleway.variable },
-  { name: "Space Grotesk (스페이스 그로테스크)", font: spaceGrotesk, className: spaceGrotesk.variable },
+  { name: "Bebas Neue (베바스 뉴)", font: bebasNeue, style: { fontFamily: bebasNeue.style.fontFamily } },
+  { name: "Montserrat (몬세라트)", font: montserrat, style: { fontFamily: montserrat.style.fontFamily } },
+  { name: "Playfair Display (플레이페어 디스플레이)", font: playfairDisplay, style: { fontFamily: playfairDisplay.style.fontFamily } },
+  { name: "Raleway (랄웨이)", font: raleway, style: { fontFamily: raleway.style.fontFamily } },
+  { name: "Space Grotesk (스페이스 그로테스크)", font: spaceGrotesk, style: { fontFamily: spaceGrotesk.style.fontFamily } },
 ];
 
 const fonts = [
@@ -136,21 +136,21 @@ export default function LogoPage() {
           <div className="space-y-16">
             {uniqueFonts.map((fontItem) => (
               <div key={fontItem.name} className="border-b border-gray-200 pb-12">
-                <h3 className={`text-2xl font-bold mb-8 ${fontItem.className}`}>
+                <h3 className="text-2xl font-bold mb-8" style={fontItem.style}>
                   {fontItem.name}
                 </h3>
                 
                 <div className="space-y-6">
-                  <div className={`${fontItem.className} text-gray-900`}>
+                  <div className="text-gray-900" style={fontItem.style}>
                     <p className="text-8xl font-bold tracking-tight">unomedia</p>
                   </div>
-                  <div className={`${fontItem.className} text-gray-900`}>
+                  <div className="text-gray-900" style={fontItem.style}>
                     <p className="text-6xl font-bold tracking-tight">unomedia</p>
                   </div>
-                  <div className={`${fontItem.className} text-gray-900`}>
+                  <div className="text-gray-900" style={fontItem.style}>
                     <p className="text-4xl font-bold tracking-tight">unomedia</p>
                   </div>
-                  <div className={`${fontItem.className} text-gray-900`}>
+                  <div className="text-gray-900" style={fontItem.style}>
                     <p className="text-3xl font-semibold tracking-tight">unomedia</p>
                   </div>
                 </div>
