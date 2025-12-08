@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Space_Grotesk } from "next/font/google";
+import { Raleway } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({
+const raleway = Raleway({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
@@ -29,7 +29,7 @@ export default function Header() {
         className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 md:py-8 bg-white/95 backdrop-blur-md text-black"
       >
         {/* 로고 영역 */}
-        <div className="text-2xl font-bold tracking-tight" style={{ fontFamily: spaceGrotesk.style.fontFamily }}>
+        <div className="text-2xl font-bold tracking-tight" style={{ fontFamily: raleway.style.fontFamily }}>
           <Link href="/" className="flex items-center gap-1 uppercase">
             <span style={{ color: "#60A5FA" }}>UNO</span>
             <span>MEDIA</span>
