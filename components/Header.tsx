@@ -15,13 +15,19 @@ export default function Header() {
         setHasScrolled(true);
       }
       
-      // Hero 섹션 높이를 기준으로 스크롤 위치 확인 (약 85vh)
+      // Hero 섹션 높이를 기준으로 스크롤 위치 확인 (85vh = 0.85)
       const heroHeight = window.innerHeight * 0.85;
+      const scrollY = window.scrollY;
+      
       // Hero 섹션 위에 있으면 true (흰색 텍스트), 벗어나면 false (검은색 텍스트)
-      setIsOnHero(window.scrollY <= heroHeight - 100);
+      // 약간의 여유를 두기 위해 50px 정도 뺌
+      setIsOnHero(scrollY < heroHeight - 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // 초기 상태 확인
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasScrolled]);
