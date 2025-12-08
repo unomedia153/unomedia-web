@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   const menuItems = [
-    { name: "ABOUT", href: "#" },
+    { name: "ABOUT", href: "/about" },
     { name: "PORTFOLIO", href: "#" },
     { name: "NEWS", href: "#" },
     { name: "프로젝트 문의", href: "#" },
