@@ -1,9 +1,9 @@
 import React from "react";
 import FadeIn from "../components/FadeIn";
-import Hero from "../components/Hero"; // 새로 만든 Hero 컴포넌트 불러오기
+import Hero from "../components/Hero";
 
 export default function Home() {
-  // 포트폴리오 더미 데이터 (기존 유지)
+  // 포트폴리오 데이터
   const projects = [
     { id: 1, title: "Uno Platform App", category: "APP Dev", color: "bg-blue-100" },
     { id: 2, title: "Corporate Website", category: "WEB Dev", color: "bg-stone-100" },
@@ -14,14 +14,13 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-black selection:bg-blue-500 selection:text-white">
+    <main className="bg-white min-h-screen selection:bg-black selection:text-white">
       
-      {/* ✅ 1. 새로 만든 히어로 섹션 적용 */}
+      {/* 1. 히어로 영역 (이미지 -> 스크롤 -> 텍스트) */}
       <Hero />
 
-
-      {/* ✅ 2. 기존 포트폴리오 그리드 섹션 (누락 없이 그대로 유지) */}
-      <section className="px-6 md:px-20 py-32 max-w-7xl mx-auto">
+      {/* 2. 포트폴리오 영역 */}
+      <section className="px-6 md:px-20 py-20 max-w-7xl mx-auto">
         <div className="mb-20 border-b border-gray-200 pb-4">
             <h2 className="text-3xl font-bold">Selected Works</h2>
         </div>
@@ -50,11 +49,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ 3. 기존 푸터 영역 (누락 없이 그대로 유지) */}
-      <footer className="bg-gray-100 py-20 text-center">
+      {/* 3. 푸터 */}
+      <footer className="bg-gray-50 py-20 text-center border-t border-gray-100">
         <FadeIn>
-            <h2 className="text-3xl font-bold mb-4">Let's create something together.</h2>
-            <button className="bg-black text-white px-8 py-3 rounded-full text-lg hover:bg-gray-800 transition">
+            <h2 className="text-3xl font-bold mb-8">Let's create something together.</h2>
+            <button className="bg-black text-white px-10 py-4 rounded-full text-lg hover:bg-gray-800 transition shadow-lg">
                 Contact Us
             </button>
         </FadeIn>
