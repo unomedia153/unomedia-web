@@ -26,8 +26,8 @@ export default function Header() {
   // ✅ 링크 수정 완료
   const menuItems = [
     { name: "ABOUT", href: "/about" },          // About 페이지 연결
-    { name: "PORTFOLIO", href: "/#portfolio" }, // 메인 페이지의 포트폴리오 섹션으로 이동
-    { name: "NEWS", href: "#" },                // (추후 생성 예정)
+    { name: "PORTFOLIO", href: "/portfolio" }, // 메인 페이지의 포트폴리오 섹션으로 이동
+    { name: "NEWS", href: "news" },                // (추후 생성 예정)
     { name: "프로젝트 문의", href: "/contact" }, // Contact 페이지 또는 섹션
   ];
 
