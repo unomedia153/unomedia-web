@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../components/Header";
 import FadeIn from "../components/FadeIn";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
@@ -16,6 +17,9 @@ export default function Home() {
 
   return (
     <main className="bg-white min-h-screen selection:bg-black selection:text-white">
+      {/* 헤더 */}
+      <Header />
+      
       {/* 히어로 영역 */}
       <Hero />
 
