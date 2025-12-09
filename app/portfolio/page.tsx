@@ -23,8 +23,12 @@ export default function Portfolio() {
     <main className="w-full min-h-screen bg-white text-black">
        {/* 3. 포트폴리오 영역 */}
        <section className="px-6 md:px-20 py-20 max-w-7xl mx-auto">
-        <div className="mb-20 border-b border-gray-200 pb-4">
-            <h2 className="text-3xl font-bold">Selected Works</h2>
+        <div className="mb-20">
+          <FadeIn>
+            <h3 className="text-4xl font-bold border-l-4 border-black pl-6 leading-snug">
+              WHAT <br /> WE DO?
+            </h3>
+          </FadeIn>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
