@@ -20,7 +20,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <main className="w-full min-h-screen bg-black text-white">
+    <main className="w-full min-h-screen bg-white text-black">
        {/* 3. 포트폴리오 영역 */}
        <section className="px-6 md:px-20 py-20 max-w-7xl mx-auto">
         <div className="mb-20 border-b border-gray-200 pb-4">
@@ -56,12 +56,9 @@ export default function Portfolio() {
         <h1 className="text-6xl md:text-9xl font-bold z-10">
           PORTFOLIO
         </h1>
-        <p className="mt-4 text-xl z-10 text-gray-300">
+        <p className="mt-4 text-xl z-10 text-gray-600">
           UNO MEDIA WORKS
         </p>
-        
-        {/* 배경 요소 (비디오나 이미지 등 기존 히어로 섹션의 배경) */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-900 -z-10 opacity-50"></div>
       </section>
 
     </main>
