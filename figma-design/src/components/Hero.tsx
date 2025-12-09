@@ -1,34 +1,35 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Play } from "lucide-react";
-import Link from "next/link";
+import { Button } from "./ui/button";
 
-const SLIDE_DURATION = 6000; // 6초마다 슬라이드 전환
+const SLIDE_DURATION = 6000; // 6 seconds per slide
 
 const slides = [
   {
     id: 1,
     title: "Digital Innovation",
-    slogan: "웹과 앱의 경계를 허무는 통합 솔루션을 제공합니다.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+    slogan: "Building the future of web, one pixel at a time.",
+    image: "https://images.unsplash.com/photo-1652212976547-16d7e2841b8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920",
+    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" // Public domain sample
   },
   {
     id: 2,
     title: "Expert Development",
-    slogan: "견고하고 확장 가능하며 안전한 애플리케이션을 제공합니다.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
+    slogan: "Robust, scalable, and secure applications for your business.",
+    image: "https://images.unsplash.com/photo-1559842135-8d5e4214ae77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920",
+    video: ""
   },
   {
     id: 3,
     title: "Creative Solutions",
-    slogan: "사용자를 사로잡고 전환시키는 경험을 디자인합니다.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-  },
+    slogan: "Designing experiences that captivate and convert.",
+    image: "https://images.unsplash.com/photo-1742440710226-450e3b85c100?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920",
+    video: ""
+  }
 ];
 
-export default function Hero() {
+export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -53,20 +54,35 @@ export default function Hero() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          {/* 배경 이미지 */}
+          {/* Background Media */}
           <div className="absolute inset-0 w-full h-full">
-            <div className="absolute inset-0 bg-black/50 z-10" />
-            <motion.img
-              src={slides[currentSlide].image}
-              alt="Background"
-              className="w-full h-full object-cover"
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: SLIDE_DURATION / 1000, ease: "linear" }}
-            />
+            <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay */}
+            
+            {slides[currentSlide].video ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                poster={slides[currentSlide].image}
+                key={slides[currentSlide].video} // Force re-render on change
+              >
+                <source src={slides[currentSlide].video} type="video/mp4" />
+              </video>
+            ) : (
+              <motion.img
+                src={slides[currentSlide].image}
+                alt="Background"
+                className="w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: SLIDE_DURATION / 1000, ease: "linear" }}
+              />
+            )}
           </div>
 
-          {/* 콘텐츠 */}
+          {/* Content */}
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
             <div className="max-w-4xl mx-auto space-y-6">
               <motion.h1
@@ -93,32 +109,25 @@ export default function Hero() {
                 transition={{ delay: 1.2, duration: 0.5 }}
                 className="pt-8 flex flex-col md:flex-row gap-4 justify-center items-center"
               >
-                <Link
-                  href="/contact"
-                  className="rounded-full px-8 py-4 text-lg font-medium bg-white text-black hover:bg-gray-200 transition-colors flex items-center gap-2"
-                >
-                  프로젝트 시작하기 <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="rounded-full px-8 py-4 text-lg font-medium border-2 border-white text-white hover:bg-white/20 transition-colors flex items-center gap-2"
-                >
-                  <Play className="w-5 h-5 fill-current" /> 포트폴리오 보기
-                </Link>
+                <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200 border-none">
+                  Start Project <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-white text-white hover:bg-white/20">
+                  <Play className="mr-2 w-5 h-5 fill-current" /> Watch Reel
+                </Button>
               </motion.div>
             </div>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* 진행 바 / 네비게이션 */}
+      {/* Progress / Navigation */}
       <div className="absolute bottom-12 left-0 right-0 z-30 flex justify-center gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
             className="group relative h-1 w-16 bg-white/30 overflow-hidden rounded-full transition-all hover:h-2"
-            aria-label={`슬라이드 ${index + 1}로 이동`}
           >
             {index === currentSlide && (
               <motion.div
@@ -131,8 +140,8 @@ export default function Hero() {
           </button>
         ))}
       </div>
-
-      {/* 하단 그라데이션 */}
+      
+      {/* Decorative element */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
     </section>
   );
