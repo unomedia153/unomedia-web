@@ -41,7 +41,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-1 uppercase" onClick={() => setIsMenuOpen(false)}>
             {/* 메뉴가 열렸을 때는 로고 색상을 흰색으로 변경하여 가독성 확보 */}
             <span style={{ color: "#60A5FA" }}>UNO</span>
-            <span className={`transition-colors duration-300 ${isMenuOpen ? "text-white md:text-black" : "text-black"}`}>
+            <span className="transition-colors duration-300 text-black">
               MEDIA
             </span>
           </Link>
@@ -63,10 +63,8 @@ export default function Header() {
         {/* 모바일용 햄버거 메뉴 아이콘 */}
         <button 
           onClick={toggleMenu}
-          className={`md:hidden text-2xl z-50 relative transition-colors duration-300 ${
-            isMenuOpen ? "text-white" : "text-black"
-          }`}
-          aria-label="메뉴 열기/닫기"
+          className="md:hidden text-2xl z-50 relative transition-colors duration-300 text-black"
+  aria-label="메뉴 열기/닫기"
         >
           {isMenuOpen ? "✕" : "≡"}
         </button>
