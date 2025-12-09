@@ -12,7 +12,7 @@ export default function Footer() {
           {/* 브랜드 */}
           <div>
             <div className="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: '#030213' }}>
                 U
               </div>
               <span>UNOMEDIA</span>
@@ -59,15 +59,15 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">연락처</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="text-primary shrink-0 mt-1" size={16} />
+                <MapPin className="shrink-0 mt-1" size={16} style={{ color: '#030213' }} />
                 <span>서울특별시 강남구 테헤란로</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="text-primary shrink-0" size={16} />
+                <Phone className="shrink-0" size={16} style={{ color: '#030213' }} />
                 <span>+82 10-1234-5678</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="text-primary shrink-0" size={16} />
+                <Mail className="shrink-0" size={16} style={{ color: '#030213' }} />
                 <span>hello@unomedia.com</span>
               </li>
             </ul>
@@ -94,7 +94,10 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
   return (
     <Link
       href={href}
-      className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
+      className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:text-white transition-all duration-300"
+      style={{ '--hover-bg': '#030213' } as React.CSSProperties}
+      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#030213'; }}
+      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; }}
       aria-label="소셜 미디어 링크"
     >
       {icon}

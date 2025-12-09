@@ -98,7 +98,7 @@ export default function Header() {
             style={{ fontFamily: raleway.style.fontFamily }}
           >
             <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: '#030213' }}>
                 U
               </div>
               <span>UNOMEDIA</span>
@@ -111,8 +111,8 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-[1.1rem] font-medium hover:text-primary transition-colors ${
-                  isScrolled ? "text-gray-700" : "text-white/90"
+                className={`text-[1.1rem] font-medium transition-colors ${
+                  isScrolled ? "text-gray-700 hover:text-[#030213]" : "text-white/90 hover:text-white"
                 }`}
                 style={{ fontFamily: poppins.style.fontFamily }}
               >
@@ -123,9 +123,10 @@ export default function Header() {
               href="/contact"
               className={`ml-4 px-6 py-2 rounded-full font-medium transition-all ${
                 isScrolled
-                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  ? "text-white hover:opacity-90"
                   : "bg-white/20 text-white hover:bg-white/30 border border-white/30"
               }`}
+              style={isScrolled ? { backgroundColor: '#030213' } : {}}
               style={{ fontFamily: poppins.style.fontFamily }}
             >
               프로젝트 문의
@@ -166,7 +167,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="block text-[2rem] font-bold text-white group-hover:text-primary transition-colors"
+                      className="block text-[2rem] font-bold text-white group-hover:text-[#030213] transition-colors"
                       style={{ fontFamily: poppins.style.fontFamily }}
                     >
                       {link.name}
